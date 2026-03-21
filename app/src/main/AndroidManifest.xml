@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BoostMode">
         <activity
+            android:name=".DetailCircuitActivity"
+            android:exported="false" />
+        <activity
             android:name=".CircuitMapActivity"
             android:exported="false" />
         <activity
