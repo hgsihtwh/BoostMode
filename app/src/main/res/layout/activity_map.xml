@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/map_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/map"
+        android:scaleType="fitXY"
+        android:contentDescription="@null" />
+
+    <TextView
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="menu"
+        android:textColor="@color/text_primary"
+        android:textSize="10sp"
+        android:fontFamily="@font/formula1_wide"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_spa"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="225dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_zandvoort"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="175dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_austria"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="295dp"
+        android:layout_marginTop="325dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_monaco"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="435dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_monza"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="185dp"
+        android:layout_marginTop="375dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <ImageView
+        android:id="@+id/marker_spain"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_marker_selector"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="500dp"
+        android:contentDescription="@null"
+        android:clickable="true"
+        android:focusable="true" />
+
+</FrameLayout>
