@@ -56,7 +56,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:18:79",
                 turns = "11",
                 length = "5 793 km",
-                mapRes = R.drawable.map_monza
+                laps = "53",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Monza, Italy",
+                opened = "1922",
+                firstF1Gp = "1949",
+                about = "The Monza Circuit, officially called the Autodromo Nazionale Monza, is a 5.793 km race track near the city of Monza, north of Milan, in Italy. Built in 1922, it is the oldest in mainland Europe and known as the Temple of Speed.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "250.706 km/h"
             )
             "spa" -> CircuitData(
                 name = "SPA",
@@ -67,7 +77,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:41:32",
                 turns = "19",
                 length = "7 004 km",
-                mapRes = R.drawable.map_monza
+                laps = "44",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Spa, Belgium",
+                opened = "1921",
+                firstF1Gp = "1950",
+                about = "Circuit de Spa-Francorchamps is a motor racing circuit located in the Ardennes forest in Belgium. It is widely regarded as one of the greatest racing circuits in the world.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "233.9 km/h"
             )
             "zandvoort" -> CircuitData(
                 name = "ZANDVOORT",
@@ -78,7 +98,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:11:10",
                 turns = "14",
                 length = "4 259 km",
-                mapRes = R.drawable.map_monza
+                laps = "72",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Zandvoort, Netherlands",
+                opened = "1948",
+                firstF1Gp = "1952",
+                about = "Circuit Zandvoort is a motorsport venue in the coastal town of Zandvoort in the Netherlands. The circuit is known for its banked corners and passionate Dutch crowd.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "196.8 km/h"
             )
             "austria" -> CircuitData(
                 name = "AUSTRIA",
@@ -89,7 +119,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:02:94",
                 turns = "10",
                 length = "4 318 km",
-                mapRes = R.drawable.map_monza
+                laps = "71",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Spielberg, Austria",
+                opened = "1969",
+                firstF1Gp = "1970",
+                about = "The Red Bull Ring is a motorsport venue in Spielberg, Austria. Nestled in the Styrian mountains, it is one of the shortest circuits on the F1 calendar.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "247.3 km/h"
             )
             "monaco" -> CircuitData(
                 name = "MONACO",
@@ -100,7 +140,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:10:26",
                 turns = "19",
                 length = "3 337 km",
-                mapRes = R.drawable.map_monza
+                laps = "78",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Monte Carlo, Monaco",
+                opened = "1929",
+                firstF1Gp = "1950",
+                about = "The Circuit de Monaco is a street circuit laid out on the city streets of Monte Carlo and La Condamine. It is the most prestigious and glamorous race on the F1 calendar.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "157.2 km/h"
             )
             else -> CircuitData(
                 name = "SPAIN",
@@ -111,7 +161,17 @@ class CircuitMapActivity : AppCompatActivity() {
                 lapTime = "1:12:70",
                 turns = "16",
                 length = "4 675 km",
-                mapRes = R.drawable.map_monza
+                laps = "66",
+                mapRes = R.drawable.map_monza,
+                circuitRes = R.drawable.circuit_monza,
+                location = "Barcelona, Spain",
+                opened = "1991",
+                firstF1Gp = "1991",
+                about = "The Circuit de Barcelona-Catalunya is a motorsport circuit in Montmeló, near Barcelona. It is a technically demanding circuit that is a favourite for pre-season testing.",
+                driver = "Max Verstappen",
+                car = "Red Bull RB21",
+                year = "2025",
+                avgSpeed = "210.5 km/h"
             )
         }
     }
