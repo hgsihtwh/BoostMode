@@ -29,7 +29,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="#A3A3A3" />
+            android:background="@color/text_secondary" />
 
         <TextView
             android:id="@+id/menu_map"
@@ -51,7 +51,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="#A3A3A3" />
+            android:background="@color/text_secondary" />
 
         <TextView
             android:id="@+id/menu_calendar"
@@ -74,7 +74,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:background="#A3A3A3" />
+            android:background="@color/text_secondary" />
 
         <TextView
             android:layout_width="match_parent"

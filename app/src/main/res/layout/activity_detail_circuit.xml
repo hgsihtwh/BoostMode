@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="About"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="12sp"
                     android:fontFamily="@font/formula1_wide" />
 
@@ -112,7 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="↓"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -129,7 +129,7 @@
                 android:id="@+id/content_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#A3A3A3"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 android:fontFamily="@font/formula1_regular"
                 android:paddingStart="20dp"
@@ -166,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Characteristics"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="12sp"
                     android:fontFamily="@font/formula1_wide" />
 
@@ -175,7 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="↓"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -200,33 +200,33 @@
                 android:visibility="gone">
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="location" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="location" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="opened" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_opened" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="opened" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_opened" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="first F1 GP" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_first_f1_gp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="first F1 GP" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_first_f1_gp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="turns" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_turns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="turns" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_turns" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="length" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_length" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="length" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_length" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="number of laps" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_laps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="number of laps" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_laps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -248,7 +248,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:paddingTop="16dp"
-                android:paddingBottom="40dp"
+                android:paddingBottom="16dp"
                 android:gravity="center_vertical"
                 android:clickable="true"
                 android:focusable="true">
@@ -258,7 +258,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Record"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="12sp"
                     android:fontFamily="@font/formula1_wide" />
 
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="↓"
-                    android:textColor="#DBDBDB"
+                    android:textColor="@color/text_primary"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -292,28 +292,28 @@
                 android:visibility="gone">
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="driver" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_driver" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="driver" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_driver" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="car" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_car" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="car" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_car" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="lap time" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_lap_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="lap time" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_lap_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="year" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_year" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="year" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_year" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="20dp">
-                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="average speed" android:textColor="#A3A3A3" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
-                    <TextView android:id="@+id/tv_avg_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#DBDBDB" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="average speed" android:textColor="@color/text_secondary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
+                    <TextView android:id="@+id/tv_avg_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/text_primary" android:textSize="12sp" android:fontFamily="@font/formula1_regular" />
                 </LinearLayout>
 
             </LinearLayout>
