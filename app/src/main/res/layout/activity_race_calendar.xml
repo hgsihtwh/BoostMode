@@ -9,18 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/btn_back"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_back"
-            android:layout_gravity="top|start"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:contentDescription="@null" />
-
         <TextView
             android:id="@+id/btn_menu"
             android:layout_width="wrap_content"
@@ -32,18 +20,18 @@
             android:layout_gravity="top|end"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
+            android:elevation="4dp"
             android:clickable="true"
             android:focusable="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
             android:layout_marginStart="20dp"
             android:layout_marginTop="150dp"
             android:layout_marginBottom="100dp"
             android:fontFamily="@font/formula1_wide"
-            android:text="2026\nSeason"
+            android:text="2026&#10;Season"
             android:textColor="@color/text_primary"
             android:textSize="30sp" />
 

@@ -18,9 +18,8 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, MapActivity::class.java))
         }
 
-        // TODO: добавить RaceCalendarActivity
-        // findViewById<TextView>(R.id.menu_calendar).setOnClickListener {
-        //     startActivity(Intent(this, RaceCalendarActivity::class.java))
-        // }
+        findViewById<TextView>(R.id.menu_calendar).setOnClickListener {
+            startActivity(Intent(this, RaceCalendarActivity::class.java))
+        }
     }
 }
