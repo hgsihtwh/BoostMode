@@ -52,7 +52,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:fontFamily="@font/formula1_regular" />
 
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="schedule"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:fontFamily="@font/formula1_regular"
             android:clickable="true"
@@ -69,10 +69,10 @@
 
         <ImageView
             android:id="@+id/iv_schedule_arrow"
-            android:layout_width="wrap_content"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_right_small"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="20dp"
             android:contentDescription="@null" />
 
     </LinearLayout>
