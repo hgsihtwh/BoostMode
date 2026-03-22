@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_session_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:fontFamily="@font/formula1_regular"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingStart="20dp" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/text_disabled" />
+
+    <TextView
+        android:id="@+id/tv_session_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:fontFamily="@font/formula1_regular"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginStart="40dp" />
+
+    <TextView
+        android:id="@+id/tv_session_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="@color/text_primary"
+        android:textSize="12sp"
+        android:fontFamily="@font/formula1_regular"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginStart="20dp"
+        android:gravity="end"
+        android:paddingEnd="20dp" />
+
+</LinearLayout>
