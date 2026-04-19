@@ -38,21 +38,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2026 Season"
-            android:textColor="@color/text_primary"
-            android:textSize="36sp"
-            android:fontFamily="@font/formula1_wide"
             android:layout_gravity="start"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="20dp" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/formula1_wide"
+            android:text="2026\nSeason"
+            android:textColor="@color/text_primary"
+            android:textSize="30sp" />
 
     </FrameLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="20dp">
+        android:layout_weight="1">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,57 +63,150 @@
             android:paddingBottom="20dp">
 
             <!-- previous -->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="previous"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:fontFamily="@font/formula1_regular"
-                android:layout_marginBottom="12dp" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_australia" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="previous"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/formula1_regular" />
+
+                <TextView
+                    android:id="@+id/btn_toggle_previous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↓"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_previous"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/race_australia"
+                    layout="@layout/item_race" />
+
+            </LinearLayout>
 
             <!-- current -->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="current"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:fontFamily="@font/formula1_regular"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp">
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_china" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="current"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/formula1_regular" />
+
+                <TextView
+                    android:id="@+id/btn_toggle_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↓"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_current"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/race_china"
+                    layout="@layout/item_race" />
+
+            </LinearLayout>
 
             <!-- upcoming -->
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="upcoming"
-                android:textColor="@color/text_secondary"
-                android:textSize="12sp"
-                android:fontFamily="@font/formula1_regular"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp">
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_japan" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="upcoming"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/formula1_regular" />
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_bahrain"
-                android:layout_marginTop="12dp" />
+                <TextView
+                    android:id="@+id/btn_toggle_upcoming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↓"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:focusable="true" />
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_saudi"
-                android:layout_marginTop="12dp" />
+            </LinearLayout>
 
-            <include layout="@layout/item_race"
-                android:id="@+id/race_miami"
-                android:layout_marginTop="12dp" />
+            <LinearLayout
+                android:id="@+id/container_upcoming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/race_japan"
+                    layout="@layout/item_race" />
+
+                <include
+                    android:id="@+id/race_bahrain"
+                    layout="@layout/item_race"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+
+                <include
+                    android:id="@+id/race_saudi"
+                    layout="@layout/item_race"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+
+                <include
+                    android:id="@+id/race_miami"
+                    layout="@layout/item_race"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
