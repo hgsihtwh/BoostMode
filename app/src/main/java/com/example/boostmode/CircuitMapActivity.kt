@@ -25,12 +25,11 @@ class CircuitMapActivity : AppCompatActivity() {
             startActivity(Intent(this, MenuActivity::class.java))
         }
 
-        // TODO: добавить DetailCircuitActivity
-        // findViewById<TextView>(R.id.btn_read_more).setOnClickListener {
-        //     val intent = Intent(this, DetailCircuitActivity::class.java)
-        //     intent.putExtra("circuit_id", circuitId)
-        //     startActivity(intent)
-        // }
+        findViewById<TextView>(R.id.btn_read_more).setOnClickListener {
+            val intent = Intent(this, DetailCircuitActivity::class.java)
+            intent.putExtra("circuit_id", circuitId)
+            startActivity(intent)
+        }
     }
 
     private fun bindData(data: CircuitData) {
