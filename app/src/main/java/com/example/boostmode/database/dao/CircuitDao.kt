@@ -13,4 +13,7 @@ interface CircuitDao {
 
     @Query("SELECT * FROM circuits WHERE raceId = :raceId")
     fun getByRaceId(raceId: String): CircuitEntity?
+
+    @Query("SELECT * FROM circuits")
+    fun getAll(): List<CircuitEntity>
 }
