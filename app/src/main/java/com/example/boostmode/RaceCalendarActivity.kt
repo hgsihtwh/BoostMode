@@ -53,11 +53,25 @@ class RaceCalendarActivity : AppCompatActivity() {
         containerUpcoming.removeAllViews()
 
         previous.forEach { race ->
-            containerPrevious.addView(createRaceCard(race))
+            val card = createRaceCard(race)
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.topMargin = 12.dpToPx()
+            card.layoutParams = params
+            containerPrevious.addView(card)
         }
 
         current.forEach { race ->
-            containerCurrent.addView(createRaceCard(race))
+            val card = createRaceCard(race)
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.topMargin = 12.dpToPx()
+            card.layoutParams = params
+            containerCurrent.addView(card)
         }
 
         upcoming.forEach { race ->

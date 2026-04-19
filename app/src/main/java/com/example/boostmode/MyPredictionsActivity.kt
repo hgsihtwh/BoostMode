@@ -69,11 +69,27 @@ class MyPredictionsActivity : AppCompatActivity() {
         containerUpcoming.removeAllViews()
 
         previous.forEach { race ->
-            containerPrevious.addView(createPredictionCard(race, predictions))
+            val card = createPredictionCard(race, predictions)
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.topMargin = 12.dpToPx()
+            card.layoutParams = params
+            containerPrevious.addView(card)
         }
+
         current.forEach { race ->
-            containerCurrent.addView(createPredictionCard(race, predictions))
+            val card = createPredictionCard(race, predictions)
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.topMargin = 12.dpToPx()
+            card.layoutParams = params
+            containerCurrent.addView(card)
         }
+
         upcoming.forEach { race ->
             val card = createPredictionCard(race, predictions)
             val params = LinearLayout.LayoutParams(
