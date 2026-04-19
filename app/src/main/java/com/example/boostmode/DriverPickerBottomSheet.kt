@@ -43,6 +43,11 @@ class DriverPickerBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val displayHeight = resources.displayMetrics.heightPixels
+        view.layoutParams = view.layoutParams.apply {
+            height = displayHeight / 2
+        }
+
         val selectedDrivers = arguments?.getStringArrayList(ARG_SELECTED) ?: emptyList<String>()
 
         thread {
