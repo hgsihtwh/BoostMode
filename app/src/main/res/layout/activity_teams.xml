@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Teams page is not\ncurrently available"
         android:textColor="@color/text_secondary"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:fontFamily="@font/formula1_regular"
         android:layout_gravity="center"
         android:gravity="center"
