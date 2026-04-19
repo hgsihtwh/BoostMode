@@ -40,7 +40,9 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "boostmode.db"
-                ).build()
+                )
+                    .allowMainThreadQueries()
+                    .build()
                 INSTANCE = instance
                 instance
             }

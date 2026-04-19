@@ -55,16 +55,19 @@ class RaceCalendarActivity : AppCompatActivity() {
         previous.forEach { race ->
             containerPrevious.addView(createRaceCard(race))
         }
+
         current.forEach { race ->
             containerCurrent.addView(createRaceCard(race))
         }
-        upcoming.forEachIndexed { index, race ->
+
+        upcoming.forEach { race ->
             val card = createRaceCard(race)
-            if (index > 0) {
-                val params = card.layoutParams as LinearLayout.LayoutParams
-                params.topMargin = 12.dpToPx()
-                card.layoutParams = params
-            }
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            )
+            params.topMargin = 12.dpToPx()
+            card.layoutParams = params
             containerUpcoming.addView(card)
         }
 
