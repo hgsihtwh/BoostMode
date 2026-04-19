@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BoostMode">
         <activity
+            android:name=".RaceScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".RaceCalendarActivity"
             android:exported="false" />
         <activity

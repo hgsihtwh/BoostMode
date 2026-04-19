@@ -3,6 +3,7 @@ package com.example.boostmode
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -128,16 +129,16 @@ class RaceCalendarActivity : AppCompatActivity() {
         card.findViewById<TextView>(R.id.tv_round_number).text = round
         card.findViewById<TextView>(R.id.tv_dates).text = dates
 
-        // card.findViewById<TextView>(R.id.tv_schedule).setOnClickListener {
-        //     val intent = Intent(this, RaceScheduleActivity::class.java)
-        //     intent.putExtra("schedule_id", scheduleId)
-        //     startActivity(intent)
-        // }
-        //
-        // card.findViewById<ImageView>(R.id.iv_schedule_arrow).setOnClickListener {
-        //     val intent = Intent(this, RaceScheduleActivity::class.java)
-        //     intent.putExtra("schedule_id", scheduleId)
-        //     startActivity(intent)
-        // }
+        card.findViewById<TextView>(R.id.tv_schedule).setOnClickListener {
+            val intent = Intent(this, RaceScheduleActivity::class.java)
+            intent.putExtra("schedule_id", scheduleId)
+            startActivity(intent)
+        }
+
+        card.findViewById<ImageView>(R.id.iv_schedule_arrow).setOnClickListener {
+            val intent = Intent(this, RaceScheduleActivity::class.java)
+            intent.putExtra("schedule_id", scheduleId)
+            startActivity(intent)
+        }
     }
 }
