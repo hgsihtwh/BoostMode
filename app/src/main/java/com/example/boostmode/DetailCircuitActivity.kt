@@ -34,6 +34,7 @@ class DetailCircuitActivity : AppCompatActivity() {
             headerId = R.id.header_about,
             contentId = R.id.content_about,
             arrowId = R.id.arrow_about,
+            dividerId = R.id.divider_about,
             isExpanded = { isAboutExpanded },
             setExpanded = { isAboutExpanded = it }
         )
@@ -42,6 +43,7 @@ class DetailCircuitActivity : AppCompatActivity() {
             headerId = R.id.header_characteristics,
             contentId = R.id.content_characteristics,
             arrowId = R.id.arrow_characteristics,
+            dividerId = R.id.divider_characteristics,
             isExpanded = { isCharacteristicsExpanded },
             setExpanded = { isCharacteristicsExpanded = it }
         )
@@ -50,6 +52,7 @@ class DetailCircuitActivity : AppCompatActivity() {
             headerId = R.id.header_record,
             contentId = R.id.content_record,
             arrowId = R.id.arrow_record,
+            dividerId = R.id.divider_record,
             isExpanded = { isRecordExpanded },
             setExpanded = { isRecordExpanded = it }
         )
@@ -59,17 +62,23 @@ class DetailCircuitActivity : AppCompatActivity() {
         headerId: Int,
         contentId: Int,
         arrowId: Int,
+        dividerId: Int,
         isExpanded: () -> Boolean,
         setExpanded: (Boolean) -> Unit
     ) {
         val content = findViewById<View>(contentId)
         val arrow = findViewById<TextView>(arrowId)
+        val divider = findViewById<View>(dividerId)
 
         findViewById<LinearLayout>(headerId).setOnClickListener {
             val expanded = !isExpanded()
             setExpanded(expanded)
             content.visibility = if (expanded) View.VISIBLE else View.GONE
             arrow.text = if (expanded) "↑" else "↓"
+            divider.setBackgroundColor(
+                if (expanded) getColor(R.color.accent_red)
+                else getColor(R.color.text_disabled)
+            )
         }
     }
 
