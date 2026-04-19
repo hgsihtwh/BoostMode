@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/accent_red"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:fontFamily="@font/valen_valentine_script" />
 
     </LinearLayout>
@@ -70,9 +70,8 @@
 
         <TextView
             android:id="@+id/tv_my_prediction"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="my prediction"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
@@ -85,7 +84,13 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_right_small"
+            android:layout_marginStart="8dp"
             android:contentDescription="@null" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/tv_schedule"
@@ -95,7 +100,6 @@
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:fontFamily="@font/formula1_regular"
-            android:layout_marginStart="20dp"
             android:clickable="true"
             android:focusable="true" />
 
