@@ -25,11 +25,14 @@ class CircuitMapActivity : AppCompatActivity() {
             startActivity(Intent(this, MenuActivity::class.java))
         }
 
-        findViewById<TextView>(R.id.btn_read_more).setOnClickListener {
+        val openDetail = android.view.View.OnClickListener {
             val intent = Intent(this, DetailCircuitActivity::class.java)
             intent.putExtra("circuit_id", circuitId)
             startActivity(intent)
         }
+
+        findViewById<TextView>(R.id.btn_read_more).setOnClickListener(openDetail)
+        findViewById<ImageView>(R.id.iv_arrow_right).setOnClickListener(openDetail)
     }
 
     private fun bindData(data: CircuitData) {
