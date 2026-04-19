@@ -20,7 +20,7 @@
             android:layout_gravity="top|end"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
-            android:elevation="4dp"
+            android:elevation="8dp"
             android:clickable="true"
             android:focusable="true" />
 
@@ -83,13 +83,7 @@
                 android:id="@+id/container_previous"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include
-                    android:id="@+id/race_australia"
-                    layout="@layout/item_race" />
-
-            </LinearLayout>
+                android:orientation="vertical" />
 
             <!-- current -->
             <LinearLayout
@@ -125,13 +119,7 @@
                 android:id="@+id/container_current"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include
-                    android:id="@+id/race_china"
-                    layout="@layout/item_race" />
-
-            </LinearLayout>
+                android:orientation="vertical" />
 
             <!-- upcoming -->
             <LinearLayout
@@ -167,34 +155,7 @@
                 android:id="@+id/container_upcoming"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <include
-                    android:id="@+id/race_japan"
-                    layout="@layout/item_race" />
-
-                <include
-                    android:id="@+id/race_bahrain"
-                    layout="@layout/item_race"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp" />
-
-                <include
-                    android:id="@+id/race_saudi"
-                    layout="@layout/item_race"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp" />
-
-                <include
-                    android:id="@+id/race_miami"
-                    layout="@layout/item_race"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp" />
-
-            </LinearLayout>
+                android:orientation="vertical" />
 
         </LinearLayout>
 
