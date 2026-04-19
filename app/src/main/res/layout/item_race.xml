@@ -6,20 +6,12 @@
     android:padding="20dp"
     android:background="@drawable/bg_race_card">
 
+    <!-- строка 1: номер + страна -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical">
-
-        <TextView
-            android:id="@+id/tv_country"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/text_primary"
-            android:textSize="20sp"
-            android:fontFamily="@font/formula1_wide" />
 
         <TextView
             android:id="@+id/tv_round_number"
@@ -29,23 +21,25 @@
             android:textSize="20sp"
             android:fontFamily="@font/formula1_wide" />
 
+        <TextView
+            android:id="@+id/tv_country"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/text_primary"
+            android:textSize="20sp"
+            android:fontFamily="@font/formula1_wide"
+            android:gravity="end" />
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_city"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/accent_red"
-        android:textSize="24sp"
-        android:fontFamily="@font/valen_valentine_script"
-        android:layout_marginTop="4dp" />
-
+    <!-- строка 2: даты + город -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="4dp">
 
         <TextView
             android:id="@+id/tv_dates"
@@ -57,10 +51,29 @@
             android:fontFamily="@font/formula1_regular" />
 
         <TextView
-            android:id="@+id/tv_schedule"
+            android:id="@+id/tv_city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="schedule"
+            android:textColor="@color/accent_red"
+            android:textSize="24sp"
+            android:fontFamily="@font/valen_valentine_script" />
+
+    </LinearLayout>
+
+    <!-- строка 3: my prediction + schedule -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_my_prediction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="my prediction"
             android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:fontFamily="@font/formula1_regular"
@@ -68,11 +81,30 @@
             android:focusable="true" />
 
         <ImageView
-            android:id="@+id/iv_schedule_arrow"
-            android:layout_width="55dp"
+            android:id="@+id/iv_prediction_arrow"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_arrow_right_small"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/tv_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="schedule"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:fontFamily="@font/formula1_regular"
             android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/iv_schedule_arrow"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right_small"
+            android:layout_marginStart="8dp"
             android:contentDescription="@null" />
 
     </LinearLayout>
