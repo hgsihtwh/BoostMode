@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary">
+
+    <TextView
+        android:id="@+id/btn_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✕"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#A3A3A3" />
+
+        <TextView
+            android:id="@+id/menu_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="map of tracks"
+            android:textColor="@color/menu_item_text_color"
+            android:textSize="20sp"
+            android:fontFamily="@font/formula1_wide"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#A3A3A3" />
+
+        <TextView
+            android:id="@+id/menu_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="race calendar"
+            android:textColor="@color/menu_item_text_color"
+            android:textSize="20sp"
+            android:fontFamily="@font/formula1_wide"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#A3A3A3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="drivers"
+            android:textColor="#4DDBDBDB"
+            android:textSize="20sp"
+            android:fontFamily="@font/formula1_wide"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#4DA3A3A3" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="teams"
+            android:textColor="#4DDBDBDB"
+            android:textSize="20sp"
+            android:fontFamily="@font/formula1_wide"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:clickable="false"
+            android:focusable="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="#4DA3A3A3" />
+
+    </LinearLayout>
+
+</FrameLayout>
