@@ -29,5 +29,9 @@ class MenuActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.menu_my_predictions).setOnClickListener {
             startActivity(Intent(this, MyPredictionsActivity::class.java))
         }
+
+        findViewById<TextView>(R.id.menu_teams).setOnClickListener {
+            startActivity(Intent(this, TeamsActivity::class.java))
+        }
     }
 }
