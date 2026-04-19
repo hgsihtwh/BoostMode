@@ -43,9 +43,9 @@
             android:textColor="@color/text_primary"
             android:textSize="36sp"
             android:fontFamily="@font/formula1_wide"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="140dp"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="60dp" />
 
     </FrameLayout>
 
