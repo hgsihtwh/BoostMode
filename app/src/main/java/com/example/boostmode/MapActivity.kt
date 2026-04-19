@@ -17,12 +17,12 @@ class MapActivity : AppCompatActivity() {
         }
 
         val markers = mapOf(
-            R.id.marker_monza to "monza",
-            R.id.marker_spa to "spa",
-            R.id.marker_zandvoort to "zandvoort",
-            R.id.marker_austria to "austria",
+            R.id.marker_monza to "italy",
+            R.id.marker_spa to "belgium",
+            R.id.marker_zandvoort to "netherlands",
+            R.id.marker_austria to "britain",
             R.id.marker_monaco to "monaco",
-            R.id.marker_spain to "spain"
+            R.id.marker_spain to "barcelona"
         )
 
         markers.forEach { (viewId, circuitId) ->
