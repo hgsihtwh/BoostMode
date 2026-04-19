@@ -42,6 +42,7 @@ class CircuitMapActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tv_status).text = data.status
         findViewById<TextView>(R.id.tv_lap_time).text = data.lapTime
         findViewById<TextView>(R.id.tv_turns).text = data.turns
+        findViewById<TextView>(R.id.tv_laps).text = data.laps
         findViewById<TextView>(R.id.tv_length).text = data.length
     }
 
