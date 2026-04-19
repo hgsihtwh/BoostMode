@@ -47,6 +47,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="16dp">
 
+        <!-- my prediction колонка -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -186,12 +187,20 @@
 
         </LinearLayout>
 
+        <!-- вертикальная черта -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/text_disabled"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- reality колонка -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
