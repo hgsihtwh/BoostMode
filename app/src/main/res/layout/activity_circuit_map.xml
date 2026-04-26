@@ -10,12 +10,10 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <ImageView
+        <org.osmdroid.views.MapView
             android:id="@+id/iv_circuit_map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:contentDescription="@null"
             android:clickable="false"
             android:focusable="false" />
 

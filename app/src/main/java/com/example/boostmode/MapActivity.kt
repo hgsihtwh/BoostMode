@@ -2,12 +2,18 @@ package com.example.boostmode
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.XYTileSource
+import org.osmdroid.util.BoundingBox
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
@@ -52,6 +58,11 @@ class MapActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            hide(WindowInsetsCompat.Type.systemBars())
+            systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
         Configuration.getInstance().userAgentValue = packageName
         setContentView(R.layout.activity_map)
 
@@ -68,8 +79,15 @@ class MapActivity : AppCompatActivity() {
             )
         )
         map.setMultiTouchControls(true)
-        map.controller.setZoom(2.5)
-        map.controller.setCenter(GeoPoint(20.0, 20.0))
+        map.zoomController.setVisibility(org.osmdroid.views.CustomZoomButtonsController.Visibility.NEVER)
+        map.isHorizontalMapRepetitionEnabled = false
+        map.isVerticalMapRepetitionEnabled = false
+        map.setScrollableAreaLimitDouble(BoundingBox(85.0, 180.0, -85.0, -180.0))
+        map.minZoomLevel = 2.0
+        map.post {
+            map.controller.setZoom(2.5)
+            map.controller.setCenter(GeoPoint(20.0, 20.0))
+        }
 
         addMarkers()
 
@@ -78,8 +96,19 @@ class MapActivity : AppCompatActivity() {
         }
     }
 
+    private fun smallMarkerIcon(): BitmapDrawable {
+        val original = BitmapFactory.decodeResource(resources, R.drawable.ic_marker_white)
+        val scaled = Bitmap.createScaledBitmap(
+            original,
+            original.width / 6,
+            original.height / 6,
+            true
+        )
+        return BitmapDrawable(resources, scaled)
+    }
+
     private fun addMarkers() {
-        val markerIcon = ContextCompat.getDrawable(this, R.drawable.ic_marker_white)
+        val markerIcon = smallMarkerIcon()
 
         circuits.forEach { circuit ->
             val marker = Marker(map)
@@ -89,6 +118,10 @@ class MapActivity : AppCompatActivity() {
             marker.icon = markerIcon
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
             marker.infoWindow = CircuitInfoWindow(map, this, circuit.circuitId)
+            marker.setOnMarkerClickListener { m, _ ->
+                m.showInfoWindow()
+                true
+            }
             map.overlays.add(marker)
         }
         map.invalidate()
