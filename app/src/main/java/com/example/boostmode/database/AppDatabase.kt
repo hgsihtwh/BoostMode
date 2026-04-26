@@ -20,7 +20,7 @@ import com.example.boostmode.database.entity.RaceEntity
         DriverEntity::class,
         PredictionEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -42,6 +42,7 @@ abstract class AppDatabase : RoomDatabase() {
                     "boostmode.db"
                 )
                     .allowMainThreadQueries()
+                    .fallbackToDestructiveMigration()
                     .build()
                 INSTANCE = instance
                 instance

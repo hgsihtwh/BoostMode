@@ -1,14 +1,17 @@
 package com.example.boostmode
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import org.osmdroid.config.Configuration
-import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import org.osmdroid.views.overlay.infowindow.InfoWindow
 
 class MapActivity : AppCompatActivity() {
 
@@ -19,7 +22,8 @@ class MapActivity : AppCompatActivity() {
         val city: String,
         val round: String,
         val lat: Double,
-        val lon: Double
+        val lon: Double,
+        val circuitId: String? = null
     )
 
     private val circuits = listOf(
@@ -28,14 +32,14 @@ class MapActivity : AppCompatActivity() {
         CircuitMarker("Japan", "Suzuka", "03", 34.8431, 136.5407),
         CircuitMarker("Miami", "Miami", "04", 25.9581, -80.2389),
         CircuitMarker("Canada", "Montreal", "05", 45.5000, -73.5228),
-        CircuitMarker("Monaco", "Monte Carlo", "06", 43.7347, 7.4205),
-        CircuitMarker("Spain", "Barcelona", "07", 41.5700, 2.2611),
+        CircuitMarker("Monaco", "Monte Carlo", "06", 43.7347, 7.4205, "monaco"),
+        CircuitMarker("Spain", "Barcelona", "07", 41.5700, 2.2611, "spain"),
         CircuitMarker("Spain", "Madrid", "08", 40.4168, -3.7038),
         CircuitMarker("Great Britain", "Silverstone", "09", 52.0786, -1.0169),
-        CircuitMarker("Belgium", "Spa", "10", 50.4372, 5.9714),
+        CircuitMarker("Belgium", "Spa", "10", 50.4372, 5.9714, "spa"),
         CircuitMarker("Hungary", "Budapest", "11", 47.5789, 19.2486),
-        CircuitMarker("Netherlands", "Zandvoort", "12", 52.3888, 4.5409),
-        CircuitMarker("Italy", "Monza", "13", 45.6156, 9.2811),
+        CircuitMarker("Netherlands", "Zandvoort", "12", 52.3888, 4.5409, "zandvoort"),
+        CircuitMarker("Italy", "Monza", "13", 45.6156, 9.2811, "monza"),
         CircuitMarker("Azerbaijan", "Baku", "14", 40.3725, 49.8533),
         CircuitMarker("Singapore", "Singapore", "15", 1.2914, 103.8640),
         CircuitMarker("USA", "Austin", "16", 30.1328, -97.6411),
@@ -52,9 +56,18 @@ class MapActivity : AppCompatActivity() {
         setContentView(R.layout.activity_map)
 
         map = findViewById(R.id.map_view)
-        map.setTileSource(TileSourceFactory.MAPNIK)
+        map.setTileSource(
+            XYTileSource(
+                "CartoDB.DarkMatter", 0, 19, 256, ".png",
+                arrayOf(
+                    "https://a.basemaps.cartocdn.com/dark_all/",
+                    "https://b.basemaps.cartocdn.com/dark_all/",
+                    "https://c.basemaps.cartocdn.com/dark_all/"
+                ),
+                "© OpenStreetMap contributors © CartoDB"
+            )
+        )
         map.setMultiTouchControls(true)
-
         map.controller.setZoom(2.5)
         map.controller.setCenter(GeoPoint(20.0, 20.0))
 
@@ -66,12 +79,16 @@ class MapActivity : AppCompatActivity() {
     }
 
     private fun addMarkers() {
+        val markerIcon = ContextCompat.getDrawable(this, R.drawable.ic_marker_white)
+
         circuits.forEach { circuit ->
             val marker = Marker(map)
             marker.position = GeoPoint(circuit.lat, circuit.lon)
             marker.title = "${circuit.country} GP"
             marker.snippet = "Round ${circuit.round} · ${circuit.city}"
+            marker.icon = markerIcon
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+            marker.infoWindow = CircuitInfoWindow(map, this, circuit.circuitId)
             map.overlays.add(marker)
         }
         map.invalidate()
@@ -85,5 +102,29 @@ class MapActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         map.onPause()
+    }
+
+    inner class CircuitInfoWindow(
+        mapView: MapView,
+        private val context: Context,
+        private val circuitId: String?
+    ) : InfoWindow(R.layout.map_info_window, mapView) {
+
+        override fun onOpen(item: Any?) {
+            val marker = item as Marker
+            mView.findViewById<TextView>(R.id.tv_iw_title).text = marker.title
+            mView.findViewById<TextView>(R.id.tv_iw_snippet).text = marker.snippet
+            mView.setOnClickListener {
+                if (circuitId != null) {
+                    context.startActivity(
+                        Intent(context, CircuitMapActivity::class.java)
+                            .putExtra("circuit_id", circuitId)
+                    )
+                }
+                close()
+            }
+        }
+
+        override fun onClose() {}
     }
 }
