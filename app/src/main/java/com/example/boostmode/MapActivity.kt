@@ -27,27 +27,27 @@ class MapActivity : AppCompatActivity() {
     )
 
     private val circuits = listOf(
-        CircuitMarker("Australia", "Melbourne", "01", -37.8497, 144.9680),
-        CircuitMarker("China", "Shanghai", "02", 31.3389, 121.2198),
-        CircuitMarker("Japan", "Suzuka", "03", 34.8431, 136.5407),
-        CircuitMarker("Miami", "Miami", "04", 25.9581, -80.2389),
-        CircuitMarker("Canada", "Montreal", "05", 45.5000, -73.5228),
+        CircuitMarker("Australia", "Melbourne", "01", -37.8497, 144.9680, "australia"),
+        CircuitMarker("China", "Shanghai", "02", 31.3389, 121.2198, "china"),
+        CircuitMarker("Japan", "Suzuka", "03", 34.8431, 136.5407, "japan"),
+        CircuitMarker("Miami", "Miami", "04", 25.9581, -80.2389, "miami"),
+        CircuitMarker("Canada", "Montreal", "05", 45.5000, -73.5228, "canada"),
         CircuitMarker("Monaco", "Monte Carlo", "06", 43.7347, 7.4205, "monaco"),
-        CircuitMarker("Spain", "Barcelona", "07", 41.5700, 2.2611, "spain"),
-        CircuitMarker("Spain", "Madrid", "08", 40.4168, -3.7038),
-        CircuitMarker("Great Britain", "Silverstone", "09", 52.0786, -1.0169),
-        CircuitMarker("Belgium", "Spa", "10", 50.4372, 5.9714, "spa"),
-        CircuitMarker("Hungary", "Budapest", "11", 47.5789, 19.2486),
-        CircuitMarker("Netherlands", "Zandvoort", "12", 52.3888, 4.5409, "zandvoort"),
-        CircuitMarker("Italy", "Monza", "13", 45.6156, 9.2811, "monza"),
-        CircuitMarker("Azerbaijan", "Baku", "14", 40.3725, 49.8533),
-        CircuitMarker("Singapore", "Singapore", "15", 1.2914, 103.8640),
-        CircuitMarker("USA", "Austin", "16", 30.1328, -97.6411),
-        CircuitMarker("Mexico", "Mexico City", "17", 19.4042, -99.0907),
-        CircuitMarker("Brazil", "São Paulo", "18", -23.7036, -46.6997),
-        CircuitMarker("Las Vegas", "Las Vegas", "19", 36.1147, -115.1728),
-        CircuitMarker("Qatar", "Lusail", "20", 25.4900, 51.4536),
-        CircuitMarker("Abu Dhabi", "Yas Marina", "21", 24.4672, 54.6031)
+        CircuitMarker("Spain", "Barcelona", "07", 41.5700, 2.2611, "barcelona"),
+        CircuitMarker("Spain", "Madrid", "08", 40.4168, -3.7038, "madrid"),
+        CircuitMarker("Great Britain", "Silverstone", "09", 52.0786, -1.0169, "britain"),
+        CircuitMarker("Belgium", "Spa", "10", 50.4372, 5.9714, "belgium"),
+        CircuitMarker("Hungary", "Budapest", "11", 47.5789, 19.2486, "hungary"),
+        CircuitMarker("Netherlands", "Zandvoort", "12", 52.3888, 4.5409, "netherlands"),
+        CircuitMarker("Italy", "Monza", "13", 45.6156, 9.2811, "italy"),
+        CircuitMarker("Azerbaijan", "Baku", "14", 40.3725, 49.8533, "azerbaijan"),
+        CircuitMarker("Singapore", "Singapore", "15", 1.2914, 103.8640, "singapore"),
+        CircuitMarker("USA", "Austin", "16", 30.1328, -97.6411, "usa"),
+        CircuitMarker("Mexico", "Mexico City", "17", 19.4042, -99.0907, "mexico"),
+        CircuitMarker("Brazil", "São Paulo", "18", -23.7036, -46.6997, "brazil"),
+        CircuitMarker("Las Vegas", "Las Vegas", "19", 36.1147, -115.1728, "lasvegas"),
+        CircuitMarker("Qatar", "Lusail", "20", 25.4900, 51.4536, "qatar"),
+        CircuitMarker("Abu Dhabi", "Yas Marina", "21", 24.4672, 54.6031, "abudhabi")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
