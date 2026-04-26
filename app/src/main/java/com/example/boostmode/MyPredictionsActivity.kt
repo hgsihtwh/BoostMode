@@ -49,17 +49,23 @@ class MyPredictionsActivity : AppCompatActivity() {
             val db = AppDatabase.getInstance(this)
             val races = db.raceDao().getAll()
             val predictions = db.predictionDao().getAll()
+
+            val apiResults = mutableMapOf<String, List<String>>()
+            races.filter { it.status == "previous" }.forEach { race ->
+                apiResults[race.id] = F1ApiService.getTopThree(race.round.toInt())
+            }
+
             runOnUiThread {
-                bindPredictions(races, predictions)
+                bindPredictions(races, predictions, apiResults)
             }
         }
     }
 
-    private fun bindPredictions(races: List<RaceEntity>, predictions: List<PredictionEntity>) {
-        val previous = races.filter { it.status == "previous" }
-        val current = races.filter { it.status == "current" }
-        val upcoming = races.filter { it.status == "upcoming" }
-
+    private fun bindPredictions(
+        races: List<RaceEntity>,
+        predictions: List<PredictionEntity>,
+        apiResults: Map<String, List<String>>
+    ) {
         val containerPrevious = findViewById<LinearLayout>(R.id.container_previous)
         val containerCurrent = findViewById<LinearLayout>(R.id.container_current)
         val containerUpcoming = findViewById<LinearLayout>(R.id.container_upcoming)
@@ -68,44 +74,29 @@ class MyPredictionsActivity : AppCompatActivity() {
         containerCurrent.removeAllViews()
         containerUpcoming.removeAllViews()
 
-        previous.forEach { race ->
-            val card = createPredictionCard(race, predictions)
-            val params = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            params.topMargin = 12.dpToPx()
-            card.layoutParams = params
-            containerPrevious.addView(card)
+        races.filter { it.status == "previous" }.forEach { race ->
+            containerPrevious.addView(createCard(race, predictions, apiResults[race.id]))
         }
-
-        current.forEach { race ->
-            val card = createPredictionCard(race, predictions)
-            val params = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            params.topMargin = 12.dpToPx()
-            card.layoutParams = params
-            containerCurrent.addView(card)
+        races.filter { it.status == "current" }.forEach { race ->
+            containerCurrent.addView(createCard(race, predictions, null))
         }
-
-        upcoming.forEach { race ->
-            val card = createPredictionCard(race, predictions)
-            val params = LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-            )
-            params.topMargin = 12.dpToPx()
-            card.layoutParams = params
-            containerUpcoming.addView(card)
+        races.filter { it.status == "upcoming" }.forEach { race ->
+            containerUpcoming.addView(createCard(race, predictions, null))
         }
     }
 
-    private fun createPredictionCard(race: RaceEntity, predictions: List<PredictionEntity>): View {
+    private fun createCard(
+        race: RaceEntity,
+        predictions: List<PredictionEntity>,
+        topThree: List<String>?
+    ): View {
         val racePredictions = predictions.filter { it.raceId == race.id }
-        val card = LayoutInflater.from(this)
-            .inflate(R.layout.item_prediction_race, null, false)
+        val card = LayoutInflater.from(this).inflate(R.layout.item_prediction_race, null, false)
+
+        card.layoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        ).apply { topMargin = 12.dpToPx() }
 
         card.findViewById<TextView>(R.id.tv_round).text = race.round
         card.findViewById<TextView>(R.id.tv_country).text = race.country
@@ -115,7 +106,23 @@ class MyPredictionsActivity : AppCompatActivity() {
         bindPosition(card, race, racePredictions, 2, R.id.tv_p2, R.id.btn_clear_p2)
         bindPosition(card, race, racePredictions, 3, R.id.tv_p3, R.id.btn_clear_p3)
 
+        bindResult(card, R.id.tv_r1, topThree?.getOrNull(0))
+        bindResult(card, R.id.tv_r2, topThree?.getOrNull(1))
+        bindResult(card, R.id.tv_r3, topThree?.getOrNull(2))
+
         return card
+    }
+
+    private fun bindResult(card: View, tvId: Int, name: String?) {
+        card.findViewById<TextView>(tvId).apply {
+            if (name != null) {
+                text = name
+                setTextColor(ContextCompat.getColor(this@MyPredictionsActivity, R.color.text_primary))
+            } else {
+                text = "..."
+                setTextColor(ContextCompat.getColor(this@MyPredictionsActivity, R.color.text_disabled))
+            }
+        }
     }
 
     private fun bindPosition(
@@ -135,9 +142,7 @@ class MyPredictionsActivity : AppCompatActivity() {
             tv.setTextColor(ContextCompat.getColor(this, R.color.text_primary))
             tv.typeface = resources.getFont(R.font.formula1_regular)
             clearBtn.visibility = View.VISIBLE
-            clearBtn.setOnClickListener {
-                deletePrediction(existing)
-            }
+            clearBtn.setOnClickListener { deletePrediction(existing) }
         } else {
             tv.text = "tap to pick"
             tv.setTextColor(ContextCompat.getColor(this, R.color.text_disabled))
@@ -191,12 +196,10 @@ class MyPredictionsActivity : AppCompatActivity() {
 
     private fun deletePrediction(prediction: PredictionEntity) {
         thread {
-            val db = AppDatabase.getInstance(this)
-            db.predictionDao().delete(prediction)
+            AppDatabase.getInstance(this).predictionDao().delete(prediction)
             loadPredictions()
         }
     }
 
-    private fun Int.dpToPx(): Int =
-        (this * resources.displayMetrics.density).toInt()
+    private fun Int.dpToPx(): Int = (this * resources.displayMetrics.density).toInt()
 }
