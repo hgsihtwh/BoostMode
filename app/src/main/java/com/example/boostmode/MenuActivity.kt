@@ -21,5 +21,17 @@ class MenuActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.menu_calendar).setOnClickListener {
             startActivity(Intent(this, RaceCalendarActivity::class.java))
         }
+
+        findViewById<TextView>(R.id.menu_drivers).setOnClickListener {
+            startActivity(Intent(this, DriversActivity::class.java))
+        }
+
+        findViewById<TextView>(R.id.menu_my_predictions).setOnClickListener {
+            startActivity(Intent(this, MyPredictionsActivity::class.java))
+        }
+
+        findViewById<TextView>(R.id.menu_teams).setOnClickListener {
+            startActivity(Intent(this, TeamsActivity::class.java))
+        }
     }
 }
