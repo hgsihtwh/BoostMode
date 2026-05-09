@@ -83,9 +83,10 @@ class MapActivity : AppCompatActivity() {
         map.isHorizontalMapRepetitionEnabled = false
         map.isVerticalMapRepetitionEnabled = false
         map.setScrollableAreaLimitDouble(BoundingBox(85.0, 180.0, -85.0, -180.0))
-        map.minZoomLevel = 2.0
         map.post {
-            map.controller.setZoom(2.5)
+            val minZoom = Math.log(map.height.toDouble() / 256.0) / Math.log(2.0)
+            map.minZoomLevel = minZoom
+            map.controller.setZoom(maxOf(2.5, minZoom))
             map.controller.setCenter(GeoPoint(20.0, 20.0))
         }
 
