@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_primary"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:fontFamily="@font/formula1_wide" />
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_primary"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:fontFamily="@font/formula1_wide"
             android:gravity="end" />
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/text_secondary"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:fontFamily="@font/formula1_regular" />
 
         <TextView
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/accent_red"
-            android:textSize="28sp"
+            android:textSize="32sp"
             android:fontFamily="@font/valen_valentine_script" />
 
     </LinearLayout>
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="my prediction"
             android:textColor="@color/text_secondary"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:fontFamily="@font/formula1_regular"
             android:clickable="true"
             android:focusable="true" />
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:text="schedule"
             android:textColor="@color/text_secondary"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:fontFamily="@font/formula1_regular"
             android:clickable="true"
             android:focusable="true" />
