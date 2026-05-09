@@ -100,8 +100,8 @@ class MapActivity : AppCompatActivity() {
         val original = BitmapFactory.decodeResource(resources, R.drawable.ic_marker_white)
         val scaled = Bitmap.createScaledBitmap(
             original,
-            original.width / 6,
-            original.height / 6,
+            original.width / 3,
+            original.height / 3,
             true
         )
         return BitmapDrawable(resources, scaled)
