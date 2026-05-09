@@ -5,6 +5,37 @@ import java.net.URL
 
 object F1ApiService {
 
+    data class ConstructorStanding(
+        val name: String,
+        val position: String,
+        val points: String
+    )
+
+    fun getConstructorStandings(): List<ConstructorStanding> {
+        return try {
+            val url = "https://api.jolpi.ca/ergast/f1/2026/constructorStandings.json"
+            val response = URL(url).readText()
+            val standingsLists = JSONObject(response)
+                .getJSONObject("MRData")
+                .getJSONObject("StandingsTable")
+                .getJSONArray("StandingsLists")
+
+            if (standingsLists.length() == 0) return emptyList()
+
+            val standings = standingsLists.getJSONObject(0).getJSONArray("ConstructorStandings")
+            (0 until standings.length()).map { i ->
+                val s = standings.getJSONObject(i)
+                ConstructorStanding(
+                    name = s.getJSONObject("Constructor").getString("name"),
+                    position = s.getString("position"),
+                    points = s.getString("points")
+                )
+            }
+        } catch (e: Exception) {
+            emptyList()
+        }
+    }
+
     fun getTopThree(round: Int): List<String> {
         return try {
             val url = "https://api.jolpi.ca/ergast/f1/2026/$round/results.json"
