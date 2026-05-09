@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="* track time"
         android:textColor="@color/text_secondary"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:fontFamily="@font/formula1_regular"
         android:gravity="end"
         android:paddingEnd="20dp"
