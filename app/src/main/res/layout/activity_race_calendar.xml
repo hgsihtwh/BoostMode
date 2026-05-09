@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:text="previous"
                     android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/formula1_regular" />
 
                 <TextView
@@ -73,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="↓"
                     android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:clickable="true"
                     android:focusable="true" />
 
@@ -100,7 +100,7 @@
                     android:layout_weight="1"
                     android:text="current"
                     android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/formula1_regular" />
 
                 <TextView
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:text="↓"
                     android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:clickable="true"
                     android:focusable="true" />
 
@@ -136,7 +136,7 @@
                     android:layout_weight="1"
                     android:text="upcoming"
                     android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     android:fontFamily="@font/formula1_regular" />
 
                 <TextView
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:text="↓"
                     android:textColor="@color/text_secondary"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:clickable="true"
                     android:focusable="true" />
 
